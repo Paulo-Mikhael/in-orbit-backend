@@ -8,6 +8,13 @@
       "when": 1726011332562,
       "tag": "0000_funny_northstar",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1726061845117,
+      "tag": "0001_fuzzy_mad_thinker",
+      "breakpoints": true
     }
   ]
 }
