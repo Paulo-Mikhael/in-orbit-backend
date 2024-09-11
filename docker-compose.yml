@@ -1,0 +1,11 @@
+name: pocket-js-server
+
+services:
+  pg:
+    image: bitnami/postgresql:13.16.0 # serviço
+    ports:
+      - "5560:5432" # Muda a porta do postgre para a porta local do computador, caso dê problema de autenticação, o problema pode ser a porta
+    environment:
+      - POSTGRES_USER=docker # Nome do usuário do banco de dados
+      - POSTGRES_PASSWORD=docker # Senha do banco de dados
+      - POSTGRES_DB=inorbit # Nome do banco de dados
