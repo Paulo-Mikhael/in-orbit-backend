@@ -5,7 +5,7 @@ import { goalCompletions, goals } from "./schema";
 async function seed() {
   await db.delete(goalCompletions);
   await db.delete(goals);
-  const startOfWeek = dayjs().startOf("week"); // Pega o primeiro dia da semana, (domingo da semana atual)
+  const startOfWeek = dayjs().startOf("week");
 
   const result = await db
     .insert(goals)
