@@ -10,7 +10,7 @@
   },
   "javascript": {
     "formatter": {
-      "arrowParentheses": "asNeeded",
+      "arrowParentheses": "always",
       "jsxQuoteStyle": "double",
       "quoteStyle": "double",
       "semicolons": "always",

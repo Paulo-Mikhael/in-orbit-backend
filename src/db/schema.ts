@@ -17,10 +17,10 @@ export const goals = pgTable("goals", {
 export const goalCompletions = pgTable("goals_completions", {
   id: text("id")
     .primaryKey()
-    .$defaultFn(() => createId()), // Formatação que eu quero
+    .$defaultFn(() => createId()),
   goalId: text("goal_id")
-    .references(() => goals.id) // Formatação atual
-    .notNull(), // Formatação atual
+    .references(() => goals.id)
+    .notNull(),
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
