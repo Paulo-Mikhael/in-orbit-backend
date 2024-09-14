@@ -78,13 +78,57 @@ src
 ```bash
   docker compose up
 ```
-### Insira alguns dados iniciais
+### Insira alguns dados iniciais (opcional)
 ```bash
   npm run seed
 ```
 ### Inicie o servidor
 ```bash
   npm run dev
+```
+
+## Rotas
+### Criar meta:
+```bash
+  POST "/goals"
+  Content-Type: application.json
+  body: {
+    title: string,
+    desiredWeeklyFrequency: number,
+  }
+```
+### Completar meta:
+```bash
+  POST "/completions"
+  Content-Type: application.json
+  body: {
+    goalId: string
+  }
+```
+### Retornar metas pendentes da semana:
+```bash
+  GET "/pending-goals"
+  // retorna:
+  {
+    id: string;
+    title: string;
+    desiredWeeklyFrequency: number;
+    completionCount: number;
+  }[]
+```
+### Retornar sumário da semana:
+```bash
+  GET "/pending-goals"
+  // retorna:
+  {
+    completed: number;
+    total: number;
+    goalsPerDay: Record<string, {
+        id: string;
+        title: string;
+        completedAt: string;
+    }[]>;
+  }
 ```
 
 ## Talvez você queira ver 💡
