@@ -61,7 +61,7 @@ src
 - assets - por ser um backend, a aplicação não precisa de resursos visuais, então está apenas com os arquivos para o readme.
 
 ## Rodando Localmente (Prompt)
-### Instale o docker e deixe-o aberto/segundo plano
+### Caso não tenha, instale o [docker desktop](https://www.docker.com/products/docker-desktop/), e deixe-o aberto/segundo plano (importante)
 ### Clone o projeto
 ```bash
   git clone https://github.com/Paulo-Mikhael/in-orbit-backend
@@ -74,6 +74,10 @@ src
 ```bash
   npm install
 ```
+### Execute o container docker (caso não funcione, certifique-se de estar no diretório do projeto e de estar seguindo o passo 1)
+```bash
+  docker compose up
+```
 ### Insira alguns dados iniciais
 ```bash
   npm run seed
@@ -85,7 +89,7 @@ src
 
 ## Talvez você queira ver 💡
   ### [Portifólio](https://portifolio-react-three.vercel.app/)
-  ### Currículo - [Veja pelo Google Docs](https://docs.google.com/document/d/1xhimUtV6EM7c1GtwBwAHsIonX1HjoLSi/edit) ou <a href="src/assets/readme-assets/PauloMiguelCurriculo.docx" download="PauloMiguelCurriculo.docx">Baixe Aqui</a>
+  ### [Currículo](https://docs.google.com/document/d/1xhimUtV6EM7c1GtwBwAHsIonX1HjoLSi/edit)
 
 ## Confira meus outros projetos 🛠️
   - [in.orbit (front-end) - Aplicação de metas pessoais](https://github.com/Paulo-Mikhael/in-orbit-frontend?tab=readme-ov-file#readme)
