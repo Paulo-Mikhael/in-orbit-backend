@@ -5,10 +5,10 @@
 
 ## Tecnologias 💻
 <div>
-  <abbr title="Node.js - Runtime Javascript" >
+  <abbr title="Node.js - Runtime Javascript">
     <img src="https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="badge do Node.js" />
   </abbr>
-  <abbr title="Typescript - Linguagem fortemente tipada" >
+  <abbr title="Typescript - Linguagem fortemente tipada">
     <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="badge da linguagem Typescript" />
   </abbr>
   <abbr title="Fastify - Framework back-end" >

@@ -45,7 +45,7 @@ export async function createGoalCompletion({
   const { completionCount, desiredWeeklyFrequency } = result[0];
 
   if (completionCount >= desiredWeeklyFrequency) {
-    throw new Error("Goal already finished this week");
+    return "finished";
   }
 
   const insertResult = await db

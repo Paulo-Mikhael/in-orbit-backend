@@ -28,11 +28,11 @@ async function seed() {
   await db.insert(goalCompletions).values([
     {
       goalId: result[0].id,
-      createdAt: startOfWeek.add(1, "day").toDate(),
+      createdAt: startOfWeek.add(1, "day").hour(6).toDate(),
     },
     {
       goalId: result[1].id,
-      createdAt: startOfWeek.toDate(),
+      createdAt: startOfWeek.hour(16).toDate(),
     },
   ]);
 }
