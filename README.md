@@ -22,7 +22,7 @@
   </abbr>
 </div>
 
-## Bibliotecas
+## Bibliotecas 📚
 <div>
   <abbr title="Drizzle - ORM (Object-Relational Mapping), para manipular dados do banco" >
     <img src="https://img.shields.io/badge/Drizzle-C5F74F.svg?style=for-the-badge&logo=Drizzle&logoColor=black" alt="badge da biblioteca e ORM Drizzle" />
@@ -30,16 +30,14 @@
   <abbr title="ZOD - Validação de dados" >
     <img src="https://img.shields.io/badge/Zod-3E67B1.svg?style=for-the-badge&logo=Zod&logoColor=white" alt="badge da biblioteca zod" />
   </abbr>
-  <abbr title="Biome - Formatação de código automática" >
+  <abbr title="Biome - Formatação de código automática">
     <img src="https://img.shields.io/badge/Biome-60A5FA.svg?style=for-the-badge&logo=Biome&logoColor=white" alt="badge da biblioteca zod" />
   </abbr>
 </div>
 
-## Estrutura principal do Projeto
+## Estrutura principal do Projeto 🗃️
 ```plaintext
 src
-├── assets/
-│   └── ...
 ├── db/
 │   ├── index.ts
 │   ├── schema.ts
@@ -58,9 +56,8 @@ src
 - functions - as funções que inserem e retornam dados ao banco;
 - http - dentro de routes, ficam os arquivos responsáveis por cada rota individual, e são agrupadas dentro de server.ts;
 - env.ts - fica as variáveis que pegam seus valores do arquivo .env da raíz do projeto, com ajuda da biblioteca ZOD;
-- assets - por ser um backend, a aplicação não precisa de resursos visuais, então está apenas com os arquivos para o readme.
 
-## Rodando Localmente (Prompt)
+## Rodando Localmente (Prompt) 📟
 ### Caso não tenha, instale o [docker desktop](https://www.docker.com/products/docker-desktop/), e deixe-o aberto/segundo plano (importante)
 ### Clone o projeto
 ```bash
@@ -87,7 +84,7 @@ src
   npm run dev
 ```
 
-## Rotas
+## Rotas 🗺️
 ### Criar meta:
 ```bash
   POST "/goals"
@@ -143,7 +140,7 @@ src
   - [Landing Page para um e-commerce de tech](https://github.com/Paulo-Mikhael/phlox?tab=readme-ov-file#readme)
   - [Landing Page para um e-commerce de plantas](https://github.com/Paulo-Mikhael/casa-verde?tab=readme-ov-file#readme)
 
-## Contatos
+## Contatos 📞
   [![Gmail Badge](https://img.shields.io/badge/Gmail-EA4335.svg?style=for-the-badge&logo=Gmail&logoColor=white)](https://portifolio-react-three.vercel.app/contacts)
   [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0A66C2.svg?style=for-the-badge&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/paulo-miguel-4b706022b/)
   [![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/pa__miguel?igsh=MWxoYzdqNGluZWcyaA%3D%3D)
