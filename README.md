@@ -1,7 +1,7 @@
 # in.orbit back-end
 
 ## Sobre ✏️
-### Este é o servidor de uma aplicação chamada in.orbit, responsável por guardar e gerenciar as metas do usuário através de rotas que podem ser acessadas pelo front-end, as metas são armazenadas em um banco de dados postgres por um container docker e gerenciadas pelo framework back-end fastify.
+### Este é o servidor de uma aplicação chamada [in.orbit](https://github.com/Paulo-Mikhael/in-orbit-frontend?tab=readme-ov-file#readme), responsável por guardar e gerenciar as metas do usuário através de rotas que podem ser acessadas pelo front-end, as metas são armazenadas em um banco de dados postgres por um container docker e gerenciadas pelo framework back-end fastify.
 
 ## Tecnologias 💻
 <div>
