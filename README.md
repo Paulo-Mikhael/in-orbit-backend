@@ -115,7 +115,7 @@ src
 ```
 ### Retornar sumário da semana:
 ```bash
-  GET "/pending-goals"
+  GET "/week"
   // retorna:
   {
     completed: number;
@@ -134,7 +134,7 @@ src
 
 ## Confira meus outros projetos 🛠️
   - [in.orbit (front-end) - Aplicação de metas pessoais](https://github.com/Paulo-Mikhael/in-orbit-frontend?tab=readme-ov-file#readme)
-  - [XWriter - Poste seus momentos](https://github.com/Paulo-Mikhael/XWriter?tab=readme-ov-file#readme)
+  - [Blog PHLOX - Blog de uma empresa de tecnologia](https://github.com/Paulo-Mikhael/phlox-blog?tab=readme-ov-file#readme)
   - [Fastask - Gerenciador de Tarefas](https://github.com/Paulo-Mikhael/fastask?tab=readme-ov-file#readme)
   - [Landing Page para uma academia](https://github.com/Paulo-Mikhael/academia-landing-page?tab=readme-ov-file#readme)
   - [Landing Page para um e-commerce de tech](https://github.com/Paulo-Mikhael/phlox?tab=readme-ov-file#readme)
