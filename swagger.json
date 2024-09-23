@@ -1,0 +1,365 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API de Metas",
+    "description": "API para conclusão e gerenciamento de metas feita durante a NLW da Rocketseat.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Meu Portifolio",
+      "url": "https://portifolio-react-three.vercel.app/"
+    }
+  },
+  "externalDocs": {
+    "description": "Github do Projeto",
+    "url": "https://github.com/Paulo-Mikhael/in-orbit-backend?tab=readme-ov-file#readme"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333",
+      "description": "API de metas"
+    }
+  ],
+  "paths": {
+    "/pending-goals": {
+      "get": {
+        "summary": "Retorna metas pendentes",
+        "tags": [
+          "Metas"
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pending-goal"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/server-error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/week": {
+      "get": {
+        "summary": "Retorna o sumário da semana atual",
+        "tags": [
+          "Metas"
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/week-summary"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/server-error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/goals": {
+      "post": {
+        "summary": "Cria uma meta",
+        "tags": [
+          "Metas"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/goal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Meta criada com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Meta criada com sucesso"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de validação",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/validation-error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/server-error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/completions": {
+      "post": {
+        "summary": "Completa uma meta",
+        "tags": [
+          "Metas"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/completion-goal"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "A meta foi concluída",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Meta completa às 00:00"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de validação",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/validation-error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Meta já atingida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "A meta foi atingida"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro no servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/server-error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "pending-goal": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "example": "e261b445-67af-4296-beb6-ac146f995207",
+              "description": "Id único no formato uuid"
+            },
+            "title": {
+              "type": "string",
+              "example": "Meditar",
+              "description": "Titulo da meta"
+            },
+            "desiredWeeklyFrequency": {
+              "type": "integer",
+              "example": 7,
+              "description": "Quantidade de vezes que o usuário deseja fazer a meta durante a semana",
+              "minimum": 1,
+              "maximum": 7
+            },
+            "completionCount": {
+              "type": "integer",
+              "example": 4,
+              "description": "Quantidade de vezes que o usuário completou a meta",
+              "maximum": 7
+            }
+          }
+        }
+      },
+      "week-summary": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "object",
+            "properties": {
+              "completed": {
+                "type": "integer",
+                "example": 5,
+                "description": "Quantidade de metas completas"
+              },
+              "total": {
+                "type": "integer",
+                "example": 10,
+                "description": "Total de metas para completar"
+              },
+              "goalsPerDay": {
+                "type": "object",
+                "description": "Metas separadas por dia",
+                "properties": {
+                  "YYYY-MM-DD": {
+                    "type": "array",
+                    "description": "Lista de metas completas nesse dia",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "e261b445-67af-4296-beb6-ac146f995207",
+                          "description": "Id único no formato uuid"
+                        },
+                        "title": {
+                          "type": "string",
+                          "example": "Meditação",
+                          "description": "Título da meta"
+                        },
+                        "completedAt": {
+                          "type": "string",
+                          "example": "Mon Sep 16 2024 14:45:30 GMT-0300 (Horário Padrão de Brasília)",
+                          "format": "date-time",
+                          "description": "Uma data no formato Local Date String"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "goal": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Meditação",
+            "description": "Título da meta"
+          },
+          "desiredWeeklyFrequency": {
+            "type": "integer",
+            "example": 7,
+            "minimum": 1,
+            "maximum": 7,
+            "description": "Quantidade de vezes que o usuário deseja fazer a meta durante a semana"
+          }
+        }
+      },
+      "completion-goal": {
+        "type": "object",
+        "properties": {
+          "goalId": {
+            "type": "string",
+            "example": "e261b445-67af-4296-beb6-ac146f995207",
+            "description": "Id único no formato uuid"
+          }
+        }
+      },
+      "server-error": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Erro interno do servidor"
+          },
+          "errorMessage": {
+            "type": "string",
+            "example": "Motivo do erro"
+          }
+        }
+      },
+      "validation-error": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Dados inválidos"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "example": "desiredWeeklyFrequency",
+                  "description": "Propriedade invalidada"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Expected number, received string",
+                  "description": "Motivo da invalidação"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
 .vscode
 node_modules
 anotações.txt
+src/http/swagger.ts
+src/http/openapi.ts
