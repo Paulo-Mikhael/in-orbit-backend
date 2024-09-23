@@ -2,7 +2,7 @@
 ![rotas da aplicação documentadas visualmente pelo swagger](public/server-docs.png)
 
 ## Sobre ✏️
-### Este é o servidor de uma aplicação chamada [in.orbit](https://github.com/Paulo-Mikhael/in-orbit-frontend?tab=readme-ov-file#readme), responsável por guardar e gerenciar as metas do usuário, as metas são armazenadas em um banco de dados postgresql por um container docker e gerenciadas pelo framework back-end fastify. Além do mais, as rotas da aplicação podem ser acessadas visualmente por uma documentação swagger, caso o servidor esteja sendo rodado localmente.
+### Este é o servidor de uma aplicação chamada [in.orbit](https://github.com/Paulo-Mikhael/in-orbit-frontend?tab=readme-ov-file#readme), responsável por guardar e gerenciar as metas do usuário, elas são armazenadas em um banco de dados postgresql por um container docker e gerenciadas pelo framework back-end fastify. Além do mais, as rotas da aplicação podem ser acessadas visualmente por uma documentação swagger.
 
 ## Tecnologias 💻
 <div>
