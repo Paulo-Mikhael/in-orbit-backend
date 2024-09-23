@@ -3,7 +3,7 @@ name: pocket-js-server
 services:
   pg:
     image: bitnami/postgresql:13.16.0 # serviço
-    container_name: in-orbit-database
+    container_name: in-orbit-database # nome do container que irá rodar o serviço
     ports:
       - "5560:5432" # Muda a porta do postgre para a porta local do computador, caso dê problema de autenticação, o problema pode ser a porta
     environment:
